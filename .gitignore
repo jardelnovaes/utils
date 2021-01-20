@@ -24,4 +24,4 @@ hs_err_pid*
 
 
 # H2 Server dist
-!*/dist/h2_server/
+!**/dist/h2_server/**
