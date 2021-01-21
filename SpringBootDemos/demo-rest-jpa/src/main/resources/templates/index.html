@@ -1,0 +1,28 @@
+<html>
+  <head>
+  <title>App</title>
+  </head>
+  <body>
+        <h2>App Test</h2>
+        <div th:unless="${#lists.isEmpty(livros)}">
+              <dl th:each="livro : ${livros}">
+                    <dt class="bookHeadline">
+                          <span th:text="${livro.titulo}">Title</span> by <span
+                                th:text="${livro.autor}">Author</span> (ISBN: <span
+                                th:text="${livro.isbn}">ISBN</span>)
+   
+                    </dt>
+                    <dd class="bookDescription">
+                          <span th:if="${livro.description}" th:text="${livro.description}">Description</span>
+                          <span th:if="${livro.description eq null}"> Nenhuma descrição foi adicionada para esse livro!</span>
+                    </dd>
+              </dl>
+        </div>
+        <div th:if="${#lists.isEmpty(livros)}">
+              <p>Nenhum Livro Cadastrado para esse autor</p>
+        </div>
+		
+		<h2>${left.name}</h2>
+        <hr />
+   </body>
+</html>
